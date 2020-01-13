@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>false</Use64BitIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebForms_Basic.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebForms_Basic.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.4.1.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.6.6823.24527, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.6.6823.24527\lib\net35-client\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="DbfDataReader, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DbfDataReader.0.5.1\lib\net452\DbfDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.Web, Version=18.3.46.0, Culture=neutral, PublicKeyToken=e92353a6bf73fffc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Essential Objects\EO.Total 2018\EO.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.8.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.8.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.8.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.8.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.8.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.4\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.3.0.0\lib\net452\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.9.3.2\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="NDbfReader, Version=2.2.0.0, Culture=neutral, PublicKeyToken=421d1ecd09787b1d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NDbfReader.2.2.0\lib\net45\NDbfReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WinFormAnimation, Version=1.5.6298.3372, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.5.6298.3372\lib\net35-client\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\JavaScript.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Estadistica.aspx" />
+    <Content Include="Formulario web1.aspx" />
+    <Content Include="Funciones.aspx" />
+    <Content Include="GOBERNANTA\GoberLogin.aspx" />
+    <Content Include="GOBERNANTA\Gober_Block.aspx" />
+    <Content Include="GOBERNANTA\Gober_Rack.aspx" />
+    <Content Include="Imagenes\config.png" />
+    <Content Include="Imagenes\creditos.png" />
+    <Content Include="Imagenes\dashboard.png" />
+    <Content Include="Imagenes\estadistica.png" />
+    <Content Include="Imagenes\facturacion.png" />
+    <Content Include="Imagenes\icono user gris.png" />
+    <Content Include="Imagenes\icono user.png" />
+    <Content Include="Imagenes\Logo tsipro oscuro.png" />
+    <Content Include="Imagenes\Logo tsipro oscuro2.png" />
+    <Content Include="Imagenes\Logo tsipro.png" />
+    <Content Include="Imagenes\mante.png" />
+    <Content Include="Imagenes\manual.png" />
+    <Content Include="Imagenes\new_hotel.png" />
+    <Content Include="Imagenes\recepcion.png" />
+    <Content Include="Imagenes\reservas.png" />
+    <Content Include="Imagenes\salones.png" />
+    <Content Include="Imagenes\tareas.png" />
+    <Content Include="Imagenes\traspaso.png" />
+    <Content Include="Imagenes\ventas.png" />
+    <Content Include="index.html" />
+    <Content Include="Mantenimiento.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="manual\ManualLogin.aspx" />
+    <Content Include="manual\Manual_Creditos.aspx" />
+    <Content Include="manual\Manual_Facturacion.aspx" />
+    <Content Include="manual\Manual_GestionVentas.aspx" />
+    <Content Include="manual\Manual_Avanzado.aspx" />
+    <Content Include="manual\Manual_Recepcion.aspx" />
+    <Content Include="manual\Manual_Reservas.aspx" />
+    <Content Include="manual\MANUAL_TECNICO.Master" />
+    <Content Include="manual\MANUAL_TECNICO.Mobile.Master" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="GOBERNANTA\Gober.Mobile.Master" />
+    <Content Include="GOBERNANTA\Gober.Master" />
+    <Content Include="DBF\CARACT_AQUILES.xlsx" />
+    <Content Include="DBF\RACK_AQUILES.xlsx" />
+    <Content Include="DBF\CONCEPTO_AQUILES.xlsx" />
+    <None Include="My Project\PublishProfiles\AquilesTesipro - Web Deploy.pubxml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\PublishProfiles\AquilesTest - FTP.pubxml" />
+    <None Include="My Project\PublishProfiles\AquilesTest - Web Deploy.pubxml" />
+    <None Include="My Project\PublishProfiles\TEST - Web Deploy.pubxml" />
+    <Content Include="NEW_HOTEL\Hoteles.aspx" />
+    <Content Include="NEW_HOTEL\Hotel_.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Cobros.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Caracterisitica.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Regimen.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Procesando.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Verificadores.aspx" />
+    <Content Include="TEST2.aspx" />
+    <Content Include="URBAN_ICON\IMAGENES\FONDO_URBAN_ICON.jpg" />
+    <Content Include="URBAN_ICON\URBAN_ICON_DASHBOARD.aspx" />
+    <Content Include="URBAN_ICON\URBAN_ICON_CONTRATO.aspx" />
+    <Content Include="URBAN_ICON\URBAN_ICON_USUARIOS.aspx" />
+    <Content Include="URBAN_ICON\URBAN_ICON_PROMO.aspx" />
+    <Content Include="URBAN_ICON\URBAN_ICON_PAGOS.aspx" />
+    <Content Include="URBAN_ICON\URBAN_ICON_LOGIN.aspx" />
+    <Content Include="URBAN_ICON\URBAN_ICON_EVENTOS.aspx" />
+    <Content Include="Scripts\bootstrap-table.js" />
+    <Content Include="USUARIOS.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Crea.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Datos_Tecnicos.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Concepto.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_TM.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Ocup.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_TipoHab.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_SegmentoOrigen.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Rack.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel_Datos.aspx" />
+    <Content Include="NEW_HOTEL\NewHotel.aspx" />
+    <Content Include="NEW_HOTEL\NEW_HOTEL.Master" />
+    <Content Include="NEW_HOTEL\NEW_HOTEL.Mobile.Master" />
+    <Content Include="Login.aspx" />
+    <Content Include="manual\Manual.aspx" />
+    <Content Include="Parametros.aspx" />
+    <Content Include="RecoveryPw.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="My Project\PublishProfiles\TestTesipro - FTP.pubxml" />
+    <None Include="My Project\PublishProfiles\TestTesipro - Web Deploy.pubxml" />
+    <Content Include="URBAN_ICON\URBAN_ICON.Master" />
+    <Content Include="URBAN_ICON\URBAN_ICON.Mobile.Master" />
+    <Content Include="PLANTILLAS\CARACT_AQUILES.xlsx" />
+    <Content Include="PLANTILLAS\CONCEPTO_AQUILES.xlsx" />
+    <Content Include="PLANTILLAS\RACK_AQUILES.xlsx" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Changepw.aspx" />
+    <Content Include="Tareas.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="Traspaso.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.vb" />
+    <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="About.aspx.designer.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estadistica.aspx.designer.vb">
+      <DependentUpon>Estadistica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estadistica.aspx.vb">
+      <DependentUpon>Estadistica.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Formulario web1.aspx.designer.vb">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario web1.aspx.vb">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Funciones.aspx.designer.vb">
+      <DependentUpon>Funciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones.aspx.vb">
+      <DependentUpon>Funciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GOBERNANTA\GoberLogin.aspx.designer.vb">
+      <DependentUpon>GoberLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GOBERNANTA\GoberLogin.aspx.vb">
+      <DependentUpon>GoberLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober.Master.designer.vb">
+      <DependentUpon>Gober.Master</DependentUpon>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober.Master.vb">
+      <DependentUpon>Gober.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober.Mobile.Master.designer.vb">
+      <DependentUpon>Gober.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober.Mobile.Master.vb">
+      <DependentUpon>Gober.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober_Block.aspx.designer.vb">
+      <DependentUpon>Gober_Block.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober_Block.aspx.vb">
+      <DependentUpon>Gober_Block.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober_Rack.aspx.designer.vb">
+      <DependentUpon>Gober_Rack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GOBERNANTA\Gober_Rack.aspx.vb">
+      <DependentUpon>Gober_Rack.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento.aspx.vb">
+      <DependentUpon>Mantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento.aspx.designer.vb">
+      <DependentUpon>Mantenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\Manual.aspx.designer.vb">
+      <DependentUpon>Manual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\Manual.aspx.vb">
+      <DependentUpon>Manual.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\ManualLogin.aspx.designer.vb">
+      <DependentUpon>ManualLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\ManualLogin.aspx.vb">
+      <DependentUpon>ManualLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\Manual_Creditos.aspx.designer.vb">
+      <DependentUpon>Manual_Creditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\Manual_Creditos.aspx.vb">
+      <DependentUpon>Manual_Creditos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\Manual_Facturacion.aspx.designer.vb">
+      <DependentUpon>Manual_Facturacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\Manual_Facturacion.aspx.vb">
+      <DependentUpon>Manual_Facturacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\Manual_GestionVentas.aspx.designer.vb">
+      <DependentUpon>Manual_GestionVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\Manual_GestionVentas.aspx.vb">
+      <DependentUpon>Manual_GestionVentas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\Manual_Avanzado.aspx.designer.vb">
+      <DependentUpon>Manual_Avanzado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\Manual_Avanzado.aspx.vb">
+      <DependentUpon>Manual_Avanzado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\Manual_Recepcion.aspx.designer.vb">
+      <DependentUpon>Manual_Recepcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\Manual_Recepcion.aspx.vb">
+      <DependentUpon>Manual_Recepcion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\Manual_Reservas.aspx.designer.vb">
+      <DependentUpon>Manual_Reservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manual\Manual_Reservas.aspx.vb">
+      <DependentUpon>Manual_Reservas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manual\MANUAL_TECNICO.Mobile.Master.designer.vb">
+      <DependentUpon>MANUAL_TECNICO.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="manual\MANUAL_TECNICO.Mobile.Master.vb">
+      <DependentUpon>MANUAL_TECNICO.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manual\MANUAL_TECNICO.Master.designer.vb">
+      <DependentUpon>MANUAL_TECNICO.Master</DependentUpon>
+    </Compile>
+    <Compile Include="manual\MANUAL_TECNICO.Master.vb">
+      <DependentUpon>MANUAL_TECNICO.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NEW_HOTEL\Hoteles.aspx.designer.vb">
+      <DependentUpon>Hoteles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\Hoteles.aspx.vb">
+      <DependentUpon>Hoteles.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\Hotel_.aspx.designer.vb">
+      <DependentUpon>Hotel_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\Hotel_.aspx.vb">
+      <DependentUpon>Hotel_.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Cobros.aspx.designer.vb">
+      <DependentUpon>NewHotel_Cobros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Cobros.aspx.vb">
+      <DependentUpon>NewHotel_Cobros.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Caracterisitica.aspx.designer.vb">
+      <DependentUpon>NewHotel_Caracterisitica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Caracterisitica.aspx.vb">
+      <DependentUpon>NewHotel_Caracterisitica.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Regimen.aspx.designer.vb">
+      <DependentUpon>NewHotel_Regimen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Regimen.aspx.vb">
+      <DependentUpon>NewHotel_Regimen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Procesando.aspx.designer.vb">
+      <DependentUpon>NewHotel_Procesando.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Procesando.aspx.vb">
+      <DependentUpon>NewHotel_Procesando.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Verificadores.aspx.designer.vb">
+      <DependentUpon>NewHotel_Verificadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Verificadores.aspx.vb">
+      <DependentUpon>NewHotel_Verificadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TEST2.aspx.designer.vb">
+      <DependentUpon>TEST2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TEST2.aspx.vb">
+      <DependentUpon>TEST2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_DASHBOARD.aspx.designer.vb">
+      <DependentUpon>URBAN_ICON_DASHBOARD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_DASHBOARD.aspx.vb">
+      <DependentUpon>URBAN_ICON_DASHBOARD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_CONTRATO.aspx.designer.vb">
+      <DependentUpon>URBAN_ICON_CONTRATO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_CONTRATO.aspx.vb">
+      <DependentUpon>URBAN_ICON_CONTRATO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_USUARIOS.aspx.designer.vb">
+      <DependentUpon>URBAN_ICON_USUARIOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_USUARIOS.aspx.vb">
+      <DependentUpon>URBAN_ICON_USUARIOS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_PROMO.aspx.designer.vb">
+      <DependentUpon>URBAN_ICON_PROMO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_PROMO.aspx.vb">
+      <DependentUpon>URBAN_ICON_PROMO.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_PAGOS.aspx.designer.vb">
+      <DependentUpon>URBAN_ICON_PAGOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_PAGOS.aspx.vb">
+      <DependentUpon>URBAN_ICON_PAGOS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_LOGIN.aspx.designer.vb">
+      <DependentUpon>URBAN_ICON_LOGIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_LOGIN.aspx.vb">
+      <DependentUpon>URBAN_ICON_LOGIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_EVENTOS.aspx.designer.vb">
+      <DependentUpon>URBAN_ICON_EVENTOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON_EVENTOS.aspx.vb">
+      <DependentUpon>URBAN_ICON_EVENTOS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON.Mobile.Master.designer.vb">
+      <DependentUpon>URBAN_ICON.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON.Mobile.Master.vb">
+      <DependentUpon>URBAN_ICON.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON.Master.designer.vb">
+      <DependentUpon>URBAN_ICON.Master</DependentUpon>
+    </Compile>
+    <Compile Include="URBAN_ICON\URBAN_ICON.Master.vb">
+      <DependentUpon>URBAN_ICON.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USUARIOS.aspx.designer.vb">
+      <DependentUpon>USUARIOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIOS.aspx.vb">
+      <DependentUpon>USUARIOS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Crea.aspx.designer.vb">
+      <DependentUpon>NewHotel_Crea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Crea.aspx.vb">
+      <DependentUpon>NewHotel_Crea.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Datos_Tecnicos.aspx.designer.vb">
+      <DependentUpon>NewHotel_Datos_Tecnicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Datos_Tecnicos.aspx.vb">
+      <DependentUpon>NewHotel_Datos_Tecnicos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Concepto.aspx.designer.vb">
+      <DependentUpon>NewHotel_Concepto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Concepto.aspx.vb">
+      <DependentUpon>NewHotel_Concepto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_TM.aspx.designer.vb">
+      <DependentUpon>NewHotel_TM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_TM.aspx.vb">
+      <DependentUpon>NewHotel_TM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Ocup.aspx.designer.vb">
+      <DependentUpon>NewHotel_Ocup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Ocup.aspx.vb">
+      <DependentUpon>NewHotel_Ocup.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_TipoHab.aspx.designer.vb">
+      <DependentUpon>NewHotel_TipoHab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_TipoHab.aspx.vb">
+      <DependentUpon>NewHotel_TipoHab.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_SegmentoOrigen.aspx.designer.vb">
+      <DependentUpon>NewHotel_SegmentoOrigen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_SegmentoOrigen.aspx.vb">
+      <DependentUpon>NewHotel_SegmentoOrigen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Rack.aspx.designer.vb">
+      <DependentUpon>NewHotel_Rack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Rack.aspx.vb">
+      <DependentUpon>NewHotel_Rack.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Datos.aspx.designer.vb">
+      <DependentUpon>NewHotel_Datos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel_Datos.aspx.vb">
+      <DependentUpon>NewHotel_Datos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel.aspx.designer.vb">
+      <DependentUpon>NewHotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NewHotel.aspx.vb">
+      <DependentUpon>NewHotel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NEW_HOTEL.Master.designer.vb">
+      <DependentUpon>NEW_HOTEL.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NEW_HOTEL.Master.vb">
+      <DependentUpon>NEW_HOTEL.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NEW_HOTEL.Mobile.Master.designer.vb">
+      <DependentUpon>NEW_HOTEL.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_HOTEL\NEW_HOTEL.Mobile.Master.vb">
+      <DependentUpon>NEW_HOTEL.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametros.aspx.designer.vb">
+      <DependentUpon>Parametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametros.aspx.vb">
+      <DependentUpon>Parametros.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Changepw.aspx.designer.vb">
+      <DependentUpon>Changepw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Changepw.aspx.vb">
+      <DependentUpon>Changepw.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RecoveryPw.aspx.designer.vb">
+      <DependentUpon>RecoveryPw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecoveryPw.aspx.vb">
+      <DependentUpon>RecoveryPw.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SingletonDb.vb" />
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tareas.aspx.designer.vb">
+      <DependentUpon>Tareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas.aspx.vb">
+      <DependentUpon>Tareas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.vb">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.vb">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Traspaso.aspx.designer.vb">
+      <DependentUpon>Traspaso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Traspaso.aspx.vb">
+      <DependentUpon>Traspaso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.vb">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.vb">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.vb">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.vb">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Start\NewFolder1\" />
+    <Folder Include="CAPTURA\" />
+    <Folder Include="SQL_SCRIPTS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58685</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58685/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

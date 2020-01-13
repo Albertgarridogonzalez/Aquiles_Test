@@ -1,0 +1,97 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="URBAN_ICON.Mobile.Master.vb" Inherits="WebApp.NEW_HOTEL_Rb_Mobile" %>
+
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AQUILES - <%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body class="body_Rb">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--Para obtener más información sobre la unión de scripts en ScriptManager, consulte https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Scripts de marco--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Scripts del sitio--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   <a class="navbar-brand" runat="server" href="~/new_hotel/NewHotel">RB Panel Control</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <%--<li><a runat="server" href="~/Login">Inicio</a></li>--%>
+                        <%--<li><a runat="server" href="~/MANUAL">INICIO</a></li>--%>
+                
+                        <%--<li><a runat="server" href="~/Login">Inicio</a></li>--%>
+                
+                          <li><a runat="server" style="font-size:13px" href="~/RB/Dashboard_Rb"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/dashboard.png" style="width :20px ; height : 20px" PostBackUrl="~/RB/Dashboard_Rb" />   DASHBOARD</a></li>
+                <li><a runat="server" style="font-size:13px" href="~/RB/Evento_Rb"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/mante.png" style="width :20px ; height : 30px" PostBackUrl="~/RB/Evento_Rb" />   EVENTOS</a></li>
+                <li><a runat="server" style="font-size:13px" href="~/RB/Contrato_Rb"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/tareas.png" style="width :20px ; height : 20px" PostBackUrl="~/RB/Contrato_Rb" />   CONTRATOS</a></li>
+                <li><a runat="server" style="font-size:13px" href="~/RB/Pagos_Rb"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/tRASPASO.png" style="width :20px ; height : 20px" PostBackUrl="~/RB/Pagos_Rb" />   PAGOS</a></li>
+                <li><a runat="server" style="font-size:13px" href="~/RB/Pagos_Promo_Rb"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/tRASPASO.png" style="width :20px ; height : 20px" PostBackUrl="~/RB/Pagos_Promo_Rb" />   PAGOS PROMO</a></li>
+              
+                        <li><a runat="server" style="font-size:13px" href="~/RB/Usuarios_Rb"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/config.png" style="width :20px ; height : 20px" PostBackUrl="~/RB/Usuarios_Rb" />   USUARIOS</a></li>
+                        <%--     <li><a runat="server" style="font-size:13px" href="~/Mantenimiento"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/mante.png" style="width :20px ; height : 30px" PostBackUrl="~/Mantenimiento" />   MANTENIM</a></li>
+                        <li><a runat="server"  style="font-size:13px" href="~/Tareas"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/tareas.png" style="width :20px ; height : 20px" PostBackUrl="~/Mantenimiento" />   TAREAS</a></li>
+                        <li><a runat="server" style="font-size:13px" href="~/Estadistica"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/estadistica.png" style="width :20px ; height : 20px" PostBackUrl="~/Estadistica" />   ESTADIST</a></li>
+                        <li><a runat="server" style="font-size:13px" href="~/manual/ManualLogin"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/manual.png" style="width :20px ; height : 20px" PostBackUrl="~/manual/ManualLogin" />   MANUAL</a></li>
+                        <li><a runat="server" style="font-size:13px" href="~/NEW_HOTEL/HOTELES"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/new_hotel.png" style="width :20px ; height : 20px" PostBackUrl="~/NEW_HOTEL/HOTELES" />   HOTELES</a></li>
+                        <li><a runat="server" style="font-size:13px" href="~/TRASPASO"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/traspaso.png" style="width :20px ; height : 20px" PostBackUrl="~/TRASPASO" />  TRASPASO</a></li>
+                        <li><a runat="server" style="font-size:13px" href="~/USUARIOS"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/config.png" style="width :20px ; height : 20px" PostBackUrl="~/USUARIOS" />  CONFIG</a></li>
+                        <li><a runat="server" style="font-size:13px" href="~/Login"><asp:ImageButton runat ="server" ImageUrl ="~/Imagenes/icono user gris.png" style="width :20px ; height : 20px" PostBackUrl="~/Login" />  LOGOUT</a></li>
+                     --%>    
+      
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <p>
+                    <br />
+                </p>
+            </asp:ContentPlaceHolder>
+            <footer  style="margin-top:25px">
+                <p>&copy; <%: DateTime.Now.Year %> - Aquiles 1.7.0</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
